@@ -1,5 +1,7 @@
 package hledanimin;
 
+import java.util.Scanner;
+
 /**
  *
  * @author xminks
@@ -11,21 +13,44 @@ public class Hledanimin {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int x = 10 +2;
-        int y = 10 +2;
-        int miny = 20;
-        int a =2;
-        int b =1;
+        Scanner scanner = new Scanner (System.in);
+        
+        int x = 4 +2;
+        int y = 4 +2;
+        int miny = 1;
+        
+       
         
         
-        tabulka tabulka = new tabulka(x, y, miny);
-
-        int[][] tab = tabulka.getTab();
+        Tabulka tabulka = new Tabulka(x, y, miny);
+          int[][] tab = tabulka.getTab();
+        
          
         
-        vypis vypis = new vypis(tab,x,y,a,b);
+        
+        
+        for(;;){
+            
+            
+            Kolo kolo = new Kolo (tab);
+           
+            tab = kolo.getTab();
+            
+            
+            
+            Vypis vypis = new Vypis(tab,x,y);
        
-       
+        
+        
+        
+        Stav stav = new Stav (miny,tab,x,y);
+        
+          
+        
+        
+        
+        }
+        }
        
     
       
@@ -38,4 +63,4 @@ public class Hledanimin {
         
     }
 
-}
+
