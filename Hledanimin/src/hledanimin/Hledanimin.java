@@ -15,8 +15,9 @@ public class Hledanimin {
         // TODO code application logic here
         Scanner scanner = new Scanner (System.in);
         
-        int x = 4 +2;
-        int y = 4 +2;
+        //určuje velikost pole ty plus jsou tam protože pole potřebuji větší zdůvodu toho že bych jinak překročil rozhraní pole při sčítání
+        int x = 1 +2;
+        int y = 1 +2;
         int miny = 1;
         
        
@@ -31,12 +32,10 @@ public class Hledanimin {
         
         for(;;){
             
-            
+        //volám dokola metody a nekonečný cyklus je tady protože aplikaci ukončuje třída Stav    
             Kolo kolo = new Kolo (tab);
            
             tab = kolo.getTab();
-            
-            
             
             Vypis vypis = new Vypis(tab,x,y);
        

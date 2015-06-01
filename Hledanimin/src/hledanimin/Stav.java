@@ -16,7 +16,7 @@ public class Stav {
     private int y;
     private int miny;
     private int stav;
-    private int policka; 
+   
     public Stav(int miny, int tab[][], int x, int y) {
 
         this.tab = tab;
@@ -24,11 +24,13 @@ public class Stav {
         this.x = x;
         this.y = y;
         stav = 0;
-        // stav 0 - hra
-        // stav 1 - výhra
-        // stav 2 - prohra
+        /* ERROR když označím všechny miny tak se hra neukončí
+        třída kontroluje výhru/prohru a ukončuje aplikaci 
+         stav 0 - hra
+         stav 1 - výhra
+         stav 2 - prohra */
         
-        policka = (x-2)*(y-2)-miny;
+        
         for (int i = 1; i < x - 1; i++) {
             for (int j = 1; j < y - 1; j++) {
 
@@ -37,9 +39,9 @@ public class Stav {
             break;
             }
             
-            if (tab [i][j]<500){
-            policka--;
-            if (policka == 0){
+            if (tab [i][j] == 10009){
+            miny--;
+            if (miny == 0){
             stav = 1;
             
             }
@@ -49,7 +51,7 @@ public class Stav {
     
         
         if (stav ==1){
-    System.err.print("Vyhrál jsi");
+    System.err.print("Vyhrál jsi"); 
     System.exit(0);
     }
 
